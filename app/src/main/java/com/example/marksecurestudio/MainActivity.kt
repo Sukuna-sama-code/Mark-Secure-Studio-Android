@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
             isAppearanceLightNavigationBars = false
         }
 
-        val bgDark = Color.parseColor("#0B0E14")
+        val bgDark = Color.parseColor("#0F1115")
 
         val rootContainer = FrameLayout(this).apply {
             setBackgroundColor(bgDark)
@@ -89,14 +89,15 @@ class MainActivity : ComponentActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(rootContainer) { view, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+            val ime = insets.getInsets(WindowInsetsCompat.Type.ime())
+            view.setPadding(bars.left, bars.top, bars.right, maxOf(bars.bottom, ime.bottom))
             WindowInsetsCompat.CONSUMED
         }
 
         webView.settings.apply {
             javaScriptEnabled = true
             domStorageEnabled = true
-            allowFileAccess = true
+            allowFileAccess = false
             allowContentAccess = true
             loadWithOverviewMode = true
             useWideViewPort = true
@@ -107,6 +108,10 @@ class MainActivity : ComponentActivity() {
         webView.addJavascriptInterface(WebAppBridge(), "AndroidBridge")
 
         webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                return request?.url?.host != "appassets.androidplatform.net"
+            }
+
             override fun shouldInterceptRequest(
                 view: WebView?,
                 request: WebResourceRequest?
@@ -148,9 +153,10 @@ class MainActivity : ComponentActivity() {
                 val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
+                    putExtra(Intent.EXTRA_ALLOW_MULTIPLE, fileChooserParams?.mode == FileChooserParams.MODE_OPEN_MULTIPLE)
                     putExtra(
                         Intent.EXTRA_MIME_TYPES,
-                        arrayOf("image/*", "application/json", "application/zip")
+                        fileChooserParams?.acceptTypes?.filter { it.isNotBlank() }?.toTypedArray()?.takeIf { it.isNotEmpty() } ?: arrayOf("image/*", "application/json", "text/csv", "application/zip")
                     )
                 }
                 filePickerLauncher.launch(Intent.createChooser(intent, "Select File"))
@@ -160,11 +166,11 @@ class MainActivity : ComponentActivity() {
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (webView.canGoBack()) {
-                    webView.goBack()
-                } else {
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
+                webView.evaluateJavascript("Boolean(window.markSecureBack && window.markSecureBack())") { handled ->
+                    if (handled != "true") {
+                        if (webView.canGoBack()) webView.goBack()
+                        else { isEnabled = false; onBackPressedDispatcher.onBackPressed() }
+                    }
                 }
             }
         })
@@ -193,7 +199,7 @@ class MainActivity : ComponentActivity() {
                     mimeType.contains("zip") -> ".zip"
                     else -> ".bin"
                 }
-                val fileName = "$defaultName$ext"
+                val fileName = "$defaultName$ext".replace(Regex("[^A-Za-z0-9._-]"), "_")
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     val contentValues = ContentValues().apply {
@@ -208,9 +214,9 @@ class MainActivity : ComponentActivity() {
                         MediaStore.Downloads.EXTERNAL_CONTENT_URI,
                         contentValues
                     )
-                    uri?.let {
+                    requireNotNull(uri) { "Could not create download" }.let {
                         val out: OutputStream? = contentResolver.openOutputStream(it)
-                        out?.use { stream -> stream.write(bytes) }
+                        requireNotNull(out) { "Could not open download" }.use { stream -> stream.write(bytes) }
                     }
                 } else {
                     @Suppress("DEPRECATION")

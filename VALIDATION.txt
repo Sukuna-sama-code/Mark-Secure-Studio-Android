@@ -1,0 +1,9 @@
+Passed: TypeScript noEmit; Vite production build; Android asset sync.
+Passed: React/jsdom plus native-canvas smoke tests for home/editor, PNG export, MS35 payload extraction, photo/certificate counts, certificate rendering/load/export.
+Browser visual tests: blocked by Chromium socket restrictions.
+Android assembleDebug: blocked at Gradle distribution download (network unreachable); no configured SDK.
+Tests use an emulated DOM/canvas, not Android WebView. Real-device touch, keyboard, download and Back behavior must still be tested.
+Passed: 5 retained 4K catalog entries and actual original dimensions; recipient batch generation and ZIP export; settings JSON export.
+Final emulated UI smoke test reported zero runtime errors.
+
+Deletion update: TypeScript and Vite production build passed; assets refreshed.

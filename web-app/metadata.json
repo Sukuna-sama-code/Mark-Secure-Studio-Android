@@ -1,0 +1,8 @@
+{
+  "name": "MarkSecure Studio — Media Watermarking & Forensic Authenticity Suite",
+  "description": "Professional image and certificate watermarking studio with custom cryptographic authenticity encoding, steganographic tamper verification, batch processing, and forensic tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "img-nat-01",
+    "title": "Misty Alpine Pine Ridge",
+    "category": "Nature",
+    "url": "./samples/img-nat-01.jpg",
+    "thumbUrl": "./samples/img-nat-01-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-nat-02",
+    "title": "Icelandic Black Sand Coast",
+    "category": "Nature",
+    "url": "./samples/img-nat-02.jpg",
+    "thumbUrl": "./samples/img-nat-02-thumb.jpg",
+    "resolution": "1600 \u00d7 1064",
+    "kind": "Images"
+  },
+  {
+    "id": "img-nat-03",
+    "title": "Emerald Rainforest Cascade",
+    "category": "Nature",
+    "url": "./samples/img-nat-03.jpg",
+    "thumbUrl": "./samples/img-nat-03-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-arc-01",
+    "title": "Brutalist Concrete Curve",
+    "category": "Architecture",
+    "url": "./samples/img-arc-01.jpg",
+    "thumbUrl": "./samples/img-arc-01-thumb.jpg",
+    "resolution": "1600 \u00d7 1068",
+    "kind": "Images"
+  },
+  {
+    "id": "img-arc-03",
+    "title": "Glass Facade Reflections",
+    "category": "Architecture",
+    "url": "./samples/img-arc-03.jpg",
+    "thumbUrl": "./samples/img-arc-03-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-arc-04",
+    "title": "Architecture study",
+    "category": "Architecture",
+    "url": "./samples/img-arc-04.jpg",
+    "thumbUrl": "./samples/img-arc-04-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-art-01",
+    "title": "Prismatic Fluid Marble",
+    "category": "Art & Abstract",
+    "url": "./samples/img-art-01.jpg",
+    "thumbUrl": "./samples/img-art-01-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-art-02",
+    "title": "Obsidian Liquid Waves",
+    "category": "Art & Abstract",
+    "url": "./samples/img-art-02.jpg",
+    "thumbUrl": "./samples/img-art-02-thumb.jpg",
+    "resolution": "1600 \u00d7 1216",
+    "kind": "Images"
+  },
+  {
+    "id": "img-art-03",
+    "title": "Golden Foil Flakes on Slate",
+    "category": "Art & Abstract",
+    "url": "./samples/img-art-03.jpg",
+    "thumbUrl": "./samples/img-art-03-thumb.jpg",
+    "resolution": "1600 \u00d7 2276",
+    "kind": "Images"
+  },
+  {
+    "id": "img-urb-01",
+    "title": "Tokyo Shinjuku Rainy Crossing",
+    "category": "Urban & Street",
+    "url": "./samples/img-urb-01.jpg",
+    "thumbUrl": "./samples/img-urb-01-thumb.jpg",
+    "resolution": "1600 \u00d7 2400",
+    "kind": "Images"
+  },
+  {
+    "id": "img-urb-02",
+    "title": "Hong Kong Neon Alleyway",
+    "category": "Urban & Street",
+    "url": "./samples/img-urb-02.jpg",
+    "thumbUrl": "./samples/img-urb-02-thumb.jpg",
+    "resolution": "1600 \u00d7 971",
+    "kind": "Images"
+  },
+  {
+    "id": "img-urb-03",
+    "title": "New York Manhattan Golden Hour",
+    "category": "Urban & Street",
+    "url": "./samples/img-urb-03.jpg",
+    "thumbUrl": "./samples/img-urb-03-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-tec-01",
+    "title": "Silicon Microchip Die Macro",
+    "category": "Technology",
+    "url": "./samples/img-tec-01.jpg",
+    "thumbUrl": "./samples/img-tec-01-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-tec-02",
+    "title": "Quantum Computing Cryo Chamber",
+    "category": "Technology",
+    "url": "./samples/img-tec-02.jpg",
+    "thumbUrl": "./samples/img-tec-02-thumb.jpg",
+    "resolution": "1600 \u00d7 1067",
+    "kind": "Images"
+  },
+  {
+    "id": "img-tec-03",
+    "title": "Server Datacenter LED Corridor",
+    "category": "Technology",
+    "url": "./samples/img-tec-03.jpg",
+    "thumbUrl": "./samples/img-tec-03-thumb.jpg",
+    "resolution": "1600 \u00d7 898",
+    "kind": "Images"
+  },
+  {
+    "id": "4k-lnd-02",
+    "title": "4K Banff Moraine Turquoise Waters",
+    "category": "Landscape 4K",
+    "url": "./samples/4k-lnd-02.jpg",
+    "thumbUrl": "./samples/4k-lnd-02-thumb.jpg",
+    "resolution": "3840 \u00d7 2563",
+    "kind": "4K"
+  },
+  {
+    "id": "4k-urb-01",
+    "title": "4K Shinjuku Tokyo Metropolis Night",
+    "category": "Urban 4K",
+    "url": "./samples/4k-urb-01.jpg",
+    "thumbUrl": "./samples/4k-urb-01-thumb.jpg",
+    "resolution": "3840 \u00d7 5759",
+    "kind": "4K"
+  },
+  {
+    "id": "4k-urb-02",
+    "title": "4K Manhattan Mid-Town Grid",
+    "category": "Urban 4K",
+    "url": "./samples/4k-urb-02.jpg",
+    "thumbUrl": "./samples/4k-urb-02-thumb.jpg",
+    "resolution": "3840 \u00d7 2560",
+    "kind": "4K"
+  },
+  {
+    "id": "4k-mac-01",
+    "title": "4K Monarch Butterfly Wing Scales",
+    "category": "Macro 4K",
+    "url": "./samples/4k-mac-01.jpg",
+    "thumbUrl": "./samples/4k-mac-01-thumb.jpg",
+    "resolution": "3840 \u00d7 2560",
+    "kind": "4K"
+  },
+  {
+    "id": "4k-mac-02",
+    "title": "4K Morning Dew on Spider Web",
+    "category": "Macro 4K",
+    "url": "./samples/4k-mac-02.jpg",
+    "thumbUrl": "./samples/4k-mac-02-thumb.jpg",
+    "resolution": "3840 \u00d7 5810",
+    "kind": "4K"
+  }
+]

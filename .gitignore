@@ -14,5 +14,10 @@
 .cxx
 local.properties
 
-web-app/
 *.zip
+
+# Web source dependencies and local build output
+node_modules/
+web-app/dist/
+.env
+.env.*
